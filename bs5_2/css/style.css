@@ -17,6 +17,8 @@ body {
 	font-family: Helvetica, sans-serif;
 	font-size: 62.5%;
 	color: #333;
+	font-family: "Microsoft JhengHei";
+	/* font-family: -apple-system; */
 }
 
 h1, h2, p, ul, li {

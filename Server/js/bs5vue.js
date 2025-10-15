@@ -23,7 +23,7 @@
 //     })
 const { createApp, ref } = Vue;
 
-createApp({
+var serviceApp=createApp({
     data(){
         return{
             Services:  [

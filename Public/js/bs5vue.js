@@ -43,10 +43,19 @@ $.ajax({
 
 
 
-createApp({
+var portfolioApp=createApp({
     setup(){
         return{
-            Portfolio: ref()
+            Portfolio: ref([])
         }
     }
 }).mount("#portfolio");
+
+$.ajax({
+    url:"/portfolio",
+    method:"get",
+    dataType:"json",
+    success: (result)=>{
+        portfolioApp.Portfolio = result;
+    }
+})

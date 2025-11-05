@@ -1,0 +1,24 @@
+{
+  "name": "2025website",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/kfhwang/2025website#readme",
+  "bugs": {
+    "url": "https://github.com/kfhwang/2025website/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kfhwang/2025website.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

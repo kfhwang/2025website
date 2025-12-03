@@ -4,8 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
 </head>
+<style>
+    body{
+        margin:0;
+    }
+    header{
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+    header img{
+        position: absolute;
+        left:0;
+        top:0;
+        width: 100%;
+    }
+    #title{
+       color: #fff; 
+       font-size: 10em;
+       position: relative;
+    }
+
+</style>
 <body>
-    
+    <header>
+        <img id="bg" src="img/bg.jpg" alt="" srcset="">
+        <h2 id="title">Mountains</h2>
+        <img id="man" src="img/man.png" alt="" srcset="">
+        <img id="cloud1" src="img/clouds_1.png" alt="" srcset="">
+        <img id="cloud2" src="img/clouds_2.png" alt="" srcset="">
+        <img id="left" src="img/mountain_left.png" alt="" srcset="">
+        <img id="right" src="img/mountain_right.png" alt="" srcset="">
+    </header>
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, veniam ipsa! Excepturi quas nam aut mollitia unde impedit, eum pariatur assumenda, tempora inventore corporis reprehenderit consequatur magnam provident accusantium laborum ipsa maiores molestias! Iste minima, repellat nostrum laborum possimus culpa perspiciatis delectus rerum hic blanditiis facere deserunt maiores et at ducimus cumque dolor? Est voluptatibus distinctio animi, atque delectus quas expedita facilis? Accusantium facere deleniti numquam laboriosam, assumenda voluptates aliquid illum natus. Aperiam fugiat quisquam deserunt accusantium quos at veniam iste adipisci necessitatibus beatae maxime, doloremque aspernatur magni similique sed praesentium? Pariatur, veritatis provident quasi ex quo laudantium porro alias reiciendis repudiandae voluptate minima voluptatibus numquam cupiditate sint voluptas facere corporis quas velit maiores eum. Quae, placeat consequuntur quod provident aliquam et debitis nisi molestiae architecto quidem libero asperiores accusantium eos minus enim maiores beatae explicabo natus expedita saepe ut magni facilis quibusdam! Dolorum dicta placeat ex hic quam, voluptate unde totam? Magni, quasi! Dignissimos, repellat. Et explicabo dolore doloribus architecto dolorum cupiditate ab, molestiae delectus nulla nostrum soluta iusto, minima officiis voluptas! Dolorum recusandae sunt distinctio dolores unde similique vel, nam minima tempora, fugiat ducimus quidem ipsa provident explicabo est aliquid sapiente quos illo laborum ratione officiis nisi!</p>
 </body>
+<script>
+    ScrollTrigger.defaults({
+        markers:true
+    });
+
+
+    gsap.to("#bg",{
+        scrollTrigger:{
+            trigger: "#title",
+            start: "top 200px",
+            end: "top 100px",
+            scrub: 1,
+            markers: true
+        },
+        scale:2, duration:3
+    });
+    gsap.to("#man",{scrollTrigger:{scrub: 1},scale:0.5, duration:3, transformOrigin:"50% 100%"});
+    gsap.to("#left",{x:-250, duration:3});
+    gsap.to("#right",{x:250, duration:3});
+    gsap.to("#cloud1",{x:-100, duration:3});
+    gsap.to("#cloud2",{x:100, duration:3});
+</script>
 </html>

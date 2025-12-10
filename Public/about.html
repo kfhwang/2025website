@@ -1,39 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/MotionPathHelper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/MotionPathPlugin.min.js"></script>
 </head>
 <style>
-    body{
-        margin:0;
+    body {
+        margin: 0;
     }
-    header{
+
+    header {
         position: relative;
         width: 100%;
-        height: 100vh;
+        height: 600px;
         display: flex;
         justify-content: center;
         align-items: center;
         overflow: hidden;
     }
-    header img{
+
+    header img {
         position: absolute;
-        left:0;
-        top:0;
+        left: 0;
+        top: 0;
         width: 100%;
     }
-    #title{
-       color: #fff; 
-       font-size: 10em;
-       position: relative;
-    }
 
+    #title {
+        color: #fff;
+        font-size: 10em;
+        position: relative;
+    }
+    #box{
+        position: relative;
+        display: flex;
+        height: 100px;
+        width: 100px;
+        background-color: blueviolet;
+        border-radius: 10%;
+    }
 </style>
+
 <body>
     <header>
         <img id="bg" src="img/bg.jpg" alt="" srcset="">
@@ -44,28 +57,76 @@
         <img id="left" src="img/mountain_left.png" alt="" srcset="">
         <img id="right" src="img/mountain_right.png" alt="" srcset="">
     </header>
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, veniam ipsa! Excepturi quas nam aut mollitia unde impedit, eum pariatur assumenda, tempora inventore corporis reprehenderit consequatur magnam provident accusantium laborum ipsa maiores molestias! Iste minima, repellat nostrum laborum possimus culpa perspiciatis delectus rerum hic blanditiis facere deserunt maiores et at ducimus cumque dolor? Est voluptatibus distinctio animi, atque delectus quas expedita facilis? Accusantium facere deleniti numquam laboriosam, assumenda voluptates aliquid illum natus. Aperiam fugiat quisquam deserunt accusantium quos at veniam iste adipisci necessitatibus beatae maxime, doloremque aspernatur magni similique sed praesentium? Pariatur, veritatis provident quasi ex quo laudantium porro alias reiciendis repudiandae voluptate minima voluptatibus numquam cupiditate sint voluptas facere corporis quas velit maiores eum. Quae, placeat consequuntur quod provident aliquam et debitis nisi molestiae architecto quidem libero asperiores accusantium eos minus enim maiores beatae explicabo natus expedita saepe ut magni facilis quibusdam! Dolorum dicta placeat ex hic quam, voluptate unde totam? Magni, quasi! Dignissimos, repellat. Et explicabo dolore doloribus architecto dolorum cupiditate ab, molestiae delectus nulla nostrum soluta iusto, minima officiis voluptas! Dolorum recusandae sunt distinctio dolores unde similique vel, nam minima tempora, fugiat ducimus quidem ipsa provident explicabo est aliquid sapiente quos illo laborum ratione officiis nisi!</p>
+    <div id="box"></div>
+    <svg width="100%" height="100%" viewBox="0 0 3200 1080" version="1.1" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/"
+        style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+        <g transform="matrix(1,0,0,1,-146.605854,-316.625257)">
+            <path id="path0"
+                d="M168.296,856.016C170.513,853.799 57.413,175.195 332.402,465.708C607.392,756.222 634.004,840.493 809.199,683.039C984.394,525.585 864.641,235.072 1157.372,461.273C1450.103,687.474 1405.749,871.54 1651.91,669.733C1898.07,467.926 1811.581,463.491 1831.54,317.125"
+                style="fill:none;stroke:red;stroke-width:1px;" />
+        </g>
+    </svg>
+    
+    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, veniam ipsa! Excepturi quas nam aut mollitia
+        unde impedit, eum pariatur assumenda, tempora inventore corporis reprehenderit consequatur magnam provident
+        accusantium laborum ipsa maiores molestias! Iste minima, repellat nostrum laborum possimus culpa perspiciatis
+        delectus rerum hic blanditiis facere deserunt maiores et at ducimus cumque dolor? Est voluptatibus distinctio
+        animi, atque delectus quas expedita facilis? Accusantium facere deleniti numquam laboriosam, assumenda
+        voluptates aliquid illum natus. Aperiam fugiat quisquam deserunt accusantium quos at veniam iste adipisci
+        necessitatibus beatae maxime, doloremque aspernatur magni similique sed praesentium? Pariatur, veritatis
+        provident quasi ex quo laudantium porro alias reiciendis repudiandae voluptate minima voluptatibus numquam
+        cupiditate sint voluptas facere corporis quas velit maiores eum. Quae, placeat consequuntur quod provident
+        aliquam et debitis nisi molestiae architecto quidem libero asperiores accusantium eos minus enim maiores beatae
+        explicabo natus expedita saepe ut magni facilis quibusdam! Dolorum dicta placeat ex hic quam, voluptate unde
+        totam? Magni, quasi! Dignissimos, repellat. Et explicabo dolore doloribus architecto dolorum cupiditate ab,
+        molestiae delectus nulla nostrum soluta iusto, minima officiis voluptas! Dolorum recusandae sunt distinctio
+        dolores unde similique vel, nam minima tempora, fugiat ducimus quidem ipsa provident explicabo est aliquid
+        sapiente quos illo laborum ratione officiis nisi!
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non recusandae at totam distinctio illo impedit, labore qui laborum alias dolore adipisci praesentium sint veritatis reiciendis pariatur eaque commodi aliquam error delectus similique cum, nihil libero ratione? Doloribus nesciunt ipsa commodi atque iusto reiciendis ut, voluptatibus voluptatem. Voluptates, repellat fuga maxime consequatur quisquam dolorem facilis quam corporis natus ullam ipsa enim perferendis at sit omnis esse! Reiciendis mollitia, facilis maxime ipsam similique a nesciunt dicta id corporis accusantium blanditiis dolorem sunt. Earum nostrum placeat vel saepe quo facilis vitae quaerat veniam a dicta. Tempora, officia? Maiores ut quia similique totam cupiditate?</p>
 </body>
 <script>
-    ScrollTrigger.defaults({
-        markers:true
-    });
-
-
-    gsap.to("#bg",{
+    gsap.to("#box",{
+        duration: 3,
+        motionPath:{
+            path:"#path0",
+            align:"#path0",
+            alignOrigin:[0.5, 0.5],
+            autoRotate: 45
+        },
         scrollTrigger:{
+            trigger:"#box",
+            start:"top 70%",
+            end:"bottom 68%",
+            toggleActions: "play reverse reverse restart",
+            markers:true
+        }
+        //onEnter, onLeave, OnEnterBack, onLeaveBack
+
+    });
+     MotionPathHelper.create("#box");
+ 
+//  ScrollTrigger.defaults({
+//         markers: true
+//     });
+ 
+
+    gsap.to("#bg", {
+        scrollTrigger: {
             trigger: "#title",
             start: "top 200px",
             end: "top 100px",
             scrub: 1,
-            markers: true
+            markers: false
         },
-        scale:2, duration:3
+        scale: 2, duration: 3
     });
-    gsap.to("#man",{scrollTrigger:{scrub: 1},scale:0.5, duration:3, transformOrigin:"50% 100%"});
-    gsap.to("#left",{x:-250, duration:3});
-    gsap.to("#right",{x:250, duration:3});
-    gsap.to("#cloud1",{x:-100, duration:3});
-    gsap.to("#cloud2",{x:100, duration:3});
+    gsap.to("#man", { scrollTrigger: { scrub: 1 }, scale: 0.7, duration: 3, transformOrigin: "50% 100%" });
+    gsap.to("#left", { scrollTrigger: { scrub: 1 },x: -250, duration: 3 });
+    gsap.to("#right", { scrollTrigger: { scrub: 1 },x: 250, duration: 3 });
+    gsap.to("#cloud1", {scrollTrigger: { scrub: 1 }, x: -100, duration: 3 });
+    gsap.to("#cloud2", { scrollTrigger: { scrub: 1 },x: 100, duration: 3 });
+     gsap.to("#title", { scrollTrigger: { scrub: 1 },scale: 0.5, duration: 3 });
 </script>
+
 </html>

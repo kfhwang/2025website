@@ -8,7 +8,7 @@ server.set("views", __dirname+"/view")
 
 var fileUpload = require("express-fileupload");
 
-server.use(express.static(__dirname + "/Public"));
+server.use(express.static(__dirname + "/ThreeJS"));
 server.use(bodyParser.urlencoded());
 server.use(bodyParser.json());
 server.use(fileUpload({limits:{fileSize:2*1024*1024}}))

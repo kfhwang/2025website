@@ -9,6 +9,11 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/MotionPathHelper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/MotionPathPlugin.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
 </head>
 <style>
     body {
@@ -37,13 +42,19 @@
         font-size: 10em;
         position: relative;
     }
-    #box{
+
+    #box {
         position: relative;
         display: flex;
         height: 100px;
         width: 100px;
         background-color: blueviolet;
         border-radius: 10%;
+    }
+
+    #map {
+        width: 100%;
+        height: 500px;
     }
 </style>
 
@@ -67,8 +78,8 @@
                 style="fill:none;stroke:red;stroke-width:1px;" />
         </g>
     </svg>
-    
-    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, veniam ipsa! Excepturi quas nam aut mollitia
+
+    <!-- <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda, veniam ipsa! Excepturi quas nam aut mollitia
         unde impedit, eum pariatur assumenda, tempora inventore corporis reprehenderit consequatur magnam provident
         accusantium laborum ipsa maiores molestias! Iste minima, repellat nostrum laborum possimus culpa perspiciatis
         delectus rerum hic blanditiis facere deserunt maiores et at ducimus cumque dolor? Est voluptatibus distinctio
@@ -83,33 +94,34 @@
         molestiae delectus nulla nostrum soluta iusto, minima officiis voluptas! Dolorum recusandae sunt distinctio
         dolores unde similique vel, nam minima tempora, fugiat ducimus quidem ipsa provident explicabo est aliquid
         sapiente quos illo laborum ratione officiis nisi!
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non recusandae at totam distinctio illo impedit, labore qui laborum alias dolore adipisci praesentium sint veritatis reiciendis pariatur eaque commodi aliquam error delectus similique cum, nihil libero ratione? Doloribus nesciunt ipsa commodi atque iusto reiciendis ut, voluptatibus voluptatem. Voluptates, repellat fuga maxime consequatur quisquam dolorem facilis quam corporis natus ullam ipsa enim perferendis at sit omnis esse! Reiciendis mollitia, facilis maxime ipsam similique a nesciunt dicta id corporis accusantium blanditiis dolorem sunt. Earum nostrum placeat vel saepe quo facilis vitae quaerat veniam a dicta. Tempora, officia? Maiores ut quia similique totam cupiditate?</p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Non recusandae at totam distinctio illo impedit, labore qui laborum alias dolore adipisci praesentium sint veritatis reiciendis pariatur eaque commodi aliquam error delectus similique cum, nihil libero ratione? Doloribus nesciunt ipsa commodi atque iusto reiciendis ut, voluptatibus voluptatem. Voluptates, repellat fuga maxime consequatur quisquam dolorem facilis quam corporis natus ullam ipsa enim perferendis at sit omnis esse! Reiciendis mollitia, facilis maxime ipsam similique a nesciunt dicta id corporis accusantium blanditiis dolorem sunt. Earum nostrum placeat vel saepe quo facilis vitae quaerat veniam a dicta. Tempora, officia? Maiores ut quia similique totam cupiditate?</p> -->
+    <div id="map"></div>
 </body>
 <script>
-    gsap.to("#box",{
+    gsap.to("#box", {
         duration: 3,
-        motionPath:{
-            path:"#path0",
-            align:"#path0",
-            alignOrigin:[0.5, 0.5],
+        motionPath: {
+            path: "#path0",
+            align: "#path0",
+            alignOrigin: [0.5, 0.5],
             autoRotate: 45
         },
-        scrollTrigger:{
-            trigger:"#box",
-            start:"top 70%",
-            end:"bottom 68%",
+        scrollTrigger: {
+            trigger: "#box",
+            start: "top 70%",
+            end: "bottom 68%",
             toggleActions: "play reverse reverse restart",
-            markers:true
+            markers: true
         }
         //onEnter, onLeave, OnEnterBack, onLeaveBack
 
     });
-     MotionPathHelper.create("#box");
- 
-//  ScrollTrigger.defaults({
-//         markers: true
-//     });
- 
+    MotionPathHelper.create("#box");
+
+    //  ScrollTrigger.defaults({
+    //         markers: true
+    //     });
+
 
     gsap.to("#bg", {
         scrollTrigger: {
@@ -122,11 +134,20 @@
         scale: 2, duration: 3
     });
     gsap.to("#man", { scrollTrigger: { scrub: 1 }, scale: 0.7, duration: 3, transformOrigin: "50% 100%" });
-    gsap.to("#left", { scrollTrigger: { scrub: 1 },x: -250, duration: 3 });
-    gsap.to("#right", { scrollTrigger: { scrub: 1 },x: 250, duration: 3 });
-    gsap.to("#cloud1", {scrollTrigger: { scrub: 1 }, x: -100, duration: 3 });
-    gsap.to("#cloud2", { scrollTrigger: { scrub: 1 },x: 100, duration: 3 });
-     gsap.to("#title", { scrollTrigger: { scrub: 1 },scale: 0.5, duration: 3 });
+    gsap.to("#left", { scrollTrigger: { scrub: 1 }, x: -250, duration: 3 });
+    gsap.to("#right", { scrollTrigger: { scrub: 1 }, x: 250, duration: 3 });
+    gsap.to("#cloud1", { scrollTrigger: { scrub: 1 }, x: -100, duration: 3 });
+    gsap.to("#cloud2", { scrollTrigger: { scrub: 1 }, x: 100, duration: 3 });
+    gsap.to("#title", { scrollTrigger: { scrub: 1 }, scale: 0.5, duration: 3 });
+
+    //map
+    var map = L.map('map').setView([24.154513, 120.679897], 12);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+
+    var marker = L.marker([24.154513, 120.679897]).addTo(map);
 </script>
 
 </html>
